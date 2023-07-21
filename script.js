@@ -95,10 +95,10 @@ const guessNumber = ()=>{
   }
 }
 
-console.log(`Answer for problem 8 is \n${guessNumber()}`);
+// console.log(`Answer for problem 8 is \n${guessNumber()}`);
 
 // 9. Create a program that generates a random password with a mixture of characters and symbols.
-const generateRandomNumber = (string)=> Math.trunc(Math.random() * string.length + 1);
+const generateRandomNumber = (string)=> Math.trunc(Math.random() * string.length);
 const randomPassword = ()=>{
   const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*';
   let password = '';
