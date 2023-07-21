@@ -73,4 +73,45 @@ const sortingArray = (arr) => {
   }
   return arr;
 }
-console.log(`Answer for problem 6 is \n${sortingArray(arr)}`)
+console.log(`Answer for problem 6 is \n${sortingArray(arr)}`);
+
+// 7.Write a function that checks if a given string, is a palindrome.
+const checkPalindrome = (str)=>{
+  return str === str.split('').reverse().join('') ? `${str} is a palindrome` : `${str} is not a palindrome`;
+}
+
+console.log(`Answer for problem 7 is \n${checkPalindrome("madam")}`);
+
+// 8.Create a program that generates a random number between 1 and 10 and asks the user to guess it.
+const guessNumber = ()=>{
+  const generateRandomNumber = Math.trunc(Math.random()*10 + 1)
+  const userInput = prompt('Enter a number to guess between 1 to 10');
+  if(userInput !== null && Number(userInput) >= 1 && Number(userInput) <= 10){
+    return (generateRandomNumber === Number(userInput)) ? `Correct guess` : `Wrong guess`;
+  }else if(userInput === null || userInput === ''){
+    return `Please type a number!!!`
+  }else if((Number(userInput) <= 0 || Number(userInput) > 10) && userInput !== null){
+    return `Enter number between 1 to 10`;
+  }
+}
+
+console.log(`Answer for problem 8 is \n${guessNumber()}`);
+
+// 9. Create a program that generates a random password with a mixture of characters and symbols.
+const generateRandomNumber = (string)=> Math.trunc(Math.random() * string.length + 1);
+const randomPassword = ()=>{
+  const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*';
+  let password = '';
+  for(let i=0; i<10;i++){
+    let number = generateRandomNumber(str);
+    password += str.slice(number,number+1);
+  }
+  return password;
+}
+
+console.log(`Answer for problem 9 is \n${randomPassword()}`);
+
+// 10.Create a program that determines if a given year is a leap year or not.
+const leapYear = (year)=>{ return (year % 400 === 0 || year % 4 === 0 && year % 100 !== 0) ? `${year} is a leap year` : `${year} is not a leap year`}
+
+console.log(`Answer for problem 10 is \n${leapYear(2024)}`);
